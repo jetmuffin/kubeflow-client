@@ -1,0 +1,187 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Kubeflow",
+    "version": "v1alpha2"
+  },
+  "paths": {},
+  "definitions": {
+    "org.kubeflow.tensorflow.v1alpha2.TFJob": {
+      "description": "TFJob represents the configuration of signal TFJob",
+      "properties": {
+        "apiVersion": {
+          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds",
+          "type": "string"
+        },
+        "metadata": {
+          "description": "Standard object's metadata.",
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
+        },
+        "spec": {
+          "description": "Specification of the desired behavior of the TFJob.",
+          "$ref": "#/definitions/org.kubeflow.tensorflow.v1alpha2.TFJobSpec"
+        },
+        "status": {
+          "description": "Most recently observed status of the TFJob. This data may not be up to date. Populated by the system. Read-only.",
+          "$ref": "#/definitions/org.kubeflow.tensorflow.v1alpha2.TFJobStatus"
+        }
+      }
+    },
+    "org.kubeflow.tensorflow.v1alpha2.TFJobCondition": {
+      "description": "TFJobCondition describes the state of the TFJob at a certain point.",
+      "required": [
+        "type",
+        "status"
+      ],
+      "properties": {
+        "lastTransitionTime": {
+          "description": "Last time the condition transitioned from one status to another.",
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
+        },
+        "lastUpdateTime": {
+          "description": "The last time this condition was updated.",
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
+        },
+        "message": {
+          "description": "A human readable message indicating details about the transition.",
+          "type": "string"
+        },
+        "reason": {
+          "description": "The reason for the condition's last transition.",
+          "type": "string"
+        },
+        "status": {
+          "description": "Status of the condition, one of True, False, Unknown.",
+          "type": "string"
+        },
+        "type": {
+          "description": "Type of TFJob condition.",
+          "type": "string"
+        }
+      }
+    },
+    "org.kubeflow.tensorflow.v1alpha2.TFJobList": {
+      "description": "TFJobList is a list of TFJobs.",
+      "required": [
+        "items"
+      ],
+      "properties": {
+        "apiVersion": {
+          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources",
+          "type": "string"
+        },
+        "items": {
+          "description": "List of TFJobs.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.kubeflow.tensorflow.v1alpha2.TFJob"
+          }
+        },
+        "kind": {
+          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds",
+          "type": "string"
+        },
+        "metadata": {
+          "description": "Standard list metadata.",
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta"
+        }
+      }
+    },
+    "org.kubeflow.tensorflow.v1alpha2.TFJobSpec": {
+      "description": "TFJobSpec is a desired state description of the TFJob.",
+      "required": [
+        "tfReplicaSpecs"
+      ],
+      "properties": {
+        "cleanPodPolicy": {
+          "description": "CleanPodPolicy defines the policy to kill pods after TFJob is succeeded. Default to Running.",
+          "type": "string"
+        },
+        "tfReplicaSpecs": {
+          "description": "TFReplicaSpecs is map of TFReplicaType and TFReplicaSpec specifies the TF replicas to run. For example,\n  {\n    \"PS\": TFReplicaSpec,\n    \"Worker\": TFReplicaSpec,\n  }",
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/org.kubeflow.tensorflow.v1alpha2.TFReplicaSpec"
+          }
+        }
+      }
+    },
+    "org.kubeflow.tensorflow.v1alpha2.TFJobStatus": {
+      "description": "TFJobStatus represents the current observed state of the TFJob.",
+      "required": [
+        "conditions",
+        "tfReplicaStatuses"
+      ],
+      "properties": {
+        "completionTime": {
+          "description": "Represents time when the TFJob was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.",
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
+        },
+        "conditions": {
+          "description": "Conditions is an array of current observed TFJob conditions.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/org.kubeflow.tensorflow.v1alpha2.TFJobCondition"
+          }
+        },
+        "lastReconcileTime": {
+          "description": "Represents last time when the TFJob was reconciled. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.",
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
+        },
+        "startTime": {
+          "description": "Represents time when the TFJob was acknowledged by the TFJob controller. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.",
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
+        },
+        "tfReplicaStatuses": {
+          "description": "TFReplicaStatuses is map of TFReplicaType and TFReplicaStatus, specifies the status of each TFReplica.",
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/org.kubeflow.tensorflow.v1alpha2.TFReplicaStatus"
+          }
+        }
+      }
+    },
+    "org.kubeflow.tensorflow.v1alpha2.TFReplicaSpec": {
+      "description": "TFReplicaSpec is a description of the TFReplica",
+      "properties": {
+        "replicas": {
+          "description": "Replicas is the desired number of replicas of the given template. If unspecified, defaults to 1.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "restartPolicy": {
+          "description": "Restart policy for all TFReplicas within the TFJob. One of Always, OnFailure, Never and ExitCode. Default to Never.",
+          "type": "string"
+        },
+        "template": {
+          "description": "Template is the object that describes the pod that will be created for this TFReplica. RestartPolicy in PodTemplateSpec will be overide by RestartPolicy in TFReplicaSpec",
+          "$ref": "#/definitions/io.k8s.api.core.v1.PodTemplateSpec"
+        }
+      }
+    },
+    "org.kubeflow.tensorflow.v1alpha2.TFReplicaStatus": {
+      "description": "TFReplicaStatus represents the current observed state of the TFReplica.",
+      "properties": {
+        "active": {
+          "description": "The number of actively running pods.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "failed": {
+          "description": "The number of pods which reached phase Failed.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "succeeded": {
+          "description": "The number of pods which reached phase Succeeded.",
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  }
+}
