@@ -29,7 +29,7 @@ import org.joda.time.DateTime;
  */
 @ApiModel(description = "TFJobCondition describes the state of the TFJob at a certain point.")
 
-public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition {
+public class V1alpha2TFJobCondition {
   @SerializedName("lastTransitionTime")
   private DateTime lastTransitionTime = null;
 
@@ -48,7 +48,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition 
   @SerializedName("type")
   private String type = null;
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition lastTransitionTime(DateTime lastTransitionTime) {
+  public V1alpha2TFJobCondition lastTransitionTime(DateTime lastTransitionTime) {
     this.lastTransitionTime = lastTransitionTime;
     return this;
   }
@@ -66,7 +66,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition 
     this.lastTransitionTime = lastTransitionTime;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition lastUpdateTime(DateTime lastUpdateTime) {
+  public V1alpha2TFJobCondition lastUpdateTime(DateTime lastUpdateTime) {
     this.lastUpdateTime = lastUpdateTime;
     return this;
   }
@@ -84,7 +84,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition 
     this.lastUpdateTime = lastUpdateTime;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition message(String message) {
+  public V1alpha2TFJobCondition message(String message) {
     this.message = message;
     return this;
   }
@@ -102,7 +102,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition 
     this.message = message;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition reason(String reason) {
+  public V1alpha2TFJobCondition reason(String reason) {
     this.reason = reason;
     return this;
   }
@@ -120,7 +120,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition 
     this.reason = reason;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition status(String status) {
+  public V1alpha2TFJobCondition status(String status) {
     this.status = status;
     return this;
   }
@@ -138,7 +138,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition 
     this.status = status;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition type(String type) {
+  public V1alpha2TFJobCondition type(String type) {
     this.type = type;
     return this;
   }
@@ -165,13 +165,13 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition 
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition = (ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition) o;
-    return Objects.equals(this.lastTransitionTime, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition.lastTransitionTime) &&
-        Objects.equals(this.lastUpdateTime, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition.lastUpdateTime) &&
-        Objects.equals(this.message, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition.message) &&
-        Objects.equals(this.reason, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition.reason) &&
-        Objects.equals(this.status, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition.status) &&
-        Objects.equals(this.type, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition.type);
+    V1alpha2TFJobCondition v1alpha2TFJobCondition = (V1alpha2TFJobCondition) o;
+    return Objects.equals(this.lastTransitionTime, v1alpha2TFJobCondition.lastTransitionTime) &&
+        Objects.equals(this.lastUpdateTime, v1alpha2TFJobCondition.lastUpdateTime) &&
+        Objects.equals(this.message, v1alpha2TFJobCondition.message) &&
+        Objects.equals(this.reason, v1alpha2TFJobCondition.reason) &&
+        Objects.equals(this.status, v1alpha2TFJobCondition.status) &&
+        Objects.equals(this.type, v1alpha2TFJobCondition.type);
   }
 
   @Override
@@ -183,7 +183,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition {\n");
+    sb.append("class V1alpha2TFJobCondition {\n");
     
     sb.append("    lastTransitionTime: ").append(toIndentedString(lastTransitionTime)).append("\n");
     sb.append("    lastUpdateTime: ").append(toIndentedString(lastUpdateTime)).append("\n");

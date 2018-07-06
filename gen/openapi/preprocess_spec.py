@@ -241,7 +241,7 @@ def remove_model_prefixes(spec):
 
     models = {}
     for k, v in spec['definitions'].items():
-        if k.startswith("com.github.appscode.voyager"):
+        if k.startswith("com.github.kubeflow"):
             models[k] = {"split_n": 2}
 
     conflict = True

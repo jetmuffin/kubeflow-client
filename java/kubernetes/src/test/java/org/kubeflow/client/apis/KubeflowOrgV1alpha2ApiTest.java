@@ -13,14 +13,14 @@
 
 package org.kubeflow.client.apis;
 
+import io.kubernetes.client.models.V1DeleteOptions;
 import org.kubeflow.client.ApiException;
-import org.kubeflow.client.models.ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob;
-import org.kubeflow.client.models.ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList;
 import io.kubernetes.client.models.V1APIResourceList;
 import io.kubernetes.client.models.V1Status;
+import org.kubeflow.client.models.V1alpha2TFJob;
+import org.kubeflow.client.models.V1alpha2TFJobList;
 import org.junit.Test;
 import org.junit.Ignore;
-import io.kubernetes.client.models.V1DeleteOptions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,9 +47,9 @@ public class KubeflowOrgV1alpha2ApiTest {
     @Test
     public void createNamespacedTFJobTest() throws ApiException {
         String namespace = null;
-        ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body = null;
+        V1alpha2TFJob body = null;
         String pretty = null;
-        ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob response = api.createNamespacedTFJob(namespace, body, pretty);
+        V1alpha2TFJob response = api.createNamespacedTFJob(namespace, body, pretty);
 
         // TODO: test validations
     }
@@ -136,7 +136,7 @@ public class KubeflowOrgV1alpha2ApiTest {
         String resourceVersion = null;
         Integer timeoutSeconds = null;
         Boolean watch = null;
-        ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList response = api.listNamespacedTFJob(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+        V1alpha2TFJobList response = api.listNamespacedTFJob(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
 
         // TODO: test validations
     }
@@ -160,7 +160,7 @@ public class KubeflowOrgV1alpha2ApiTest {
         String resourceVersion = null;
         Integer timeoutSeconds = null;
         Boolean watch = null;
-        ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList response = api.listTFJobForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
+        V1alpha2TFJobList response = api.listTFJobForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
 
         // TODO: test validations
     }
@@ -179,7 +179,7 @@ public class KubeflowOrgV1alpha2ApiTest {
         String namespace = null;
         Object body = null;
         String pretty = null;
-        ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob response = api.patchNamespacedTFJob(name, namespace, body, pretty);
+        V1alpha2TFJob response = api.patchNamespacedTFJob(name, namespace, body, pretty);
 
         // TODO: test validations
     }
@@ -197,7 +197,7 @@ public class KubeflowOrgV1alpha2ApiTest {
         String name = null;
         String namespace = null;
         String pretty = null;
-        ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob response = api.readNamespacedTFJob(name, namespace, pretty);
+        V1alpha2TFJob response = api.readNamespacedTFJob(name, namespace, pretty);
 
         // TODO: test validations
     }
@@ -214,9 +214,9 @@ public class KubeflowOrgV1alpha2ApiTest {
     public void replaceNamespacedTFJobTest() throws ApiException {
         String name = null;
         String namespace = null;
-        ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body = null;
+        V1alpha2TFJob body = null;
         String pretty = null;
-        ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob response = api.replaceNamespacedTFJob(name, namespace, body, pretty);
+        V1alpha2TFJob response = api.replaceNamespacedTFJob(name, namespace, body, pretty);
 
         // TODO: test validations
     }

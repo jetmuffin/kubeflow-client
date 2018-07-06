@@ -28,10 +28,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.kubeflow.client.models.ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob;
-import org.kubeflow.client.models.ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList;
 import io.kubernetes.client.models.V1APIResourceList;
 import io.kubernetes.client.models.V1Status;
+import org.kubeflow.client.models.V1alpha2TFJob;
+import org.kubeflow.client.models.V1alpha2TFJobList;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -68,7 +68,7 @@ public class KubeflowOrgV1alpha2Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createNamespacedTFJobCall(String namespace, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createNamespacedTFJobCall(String namespace, V1alpha2TFJob body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -113,7 +113,7 @@ public class KubeflowOrgV1alpha2Api {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createNamespacedTFJobValidateBeforeCall(String namespace, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createNamespacedTFJobValidateBeforeCall(String namespace, V1alpha2TFJob body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'namespace' is set
         if (namespace == null) {
@@ -141,11 +141,11 @@ public class KubeflowOrgV1alpha2Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob
+     * @return V1alpha2TFJob
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob createNamespacedTFJob(String namespace, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body, String pretty) throws ApiException {
-        ApiResponse<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> resp = createNamespacedTFJobWithHttpInfo(namespace, body, pretty);
+    public V1alpha2TFJob createNamespacedTFJob(String namespace, V1alpha2TFJob body, String pretty) throws ApiException {
+        ApiResponse<V1alpha2TFJob> resp = createNamespacedTFJobWithHttpInfo(namespace, body, pretty);
         return resp.getData();
     }
 
@@ -155,12 +155,12 @@ public class KubeflowOrgV1alpha2Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ApiResponse&lt;ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob&gt;
+     * @return ApiResponse&lt;V1alpha2TFJob&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> createNamespacedTFJobWithHttpInfo(String namespace, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body, String pretty) throws ApiException {
+    public ApiResponse<V1alpha2TFJob> createNamespacedTFJobWithHttpInfo(String namespace, V1alpha2TFJob body, String pretty) throws ApiException {
         com.squareup.okhttp.Call call = createNamespacedTFJobValidateBeforeCall(namespace, body, pretty, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1alpha2TFJob>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -174,7 +174,7 @@ public class KubeflowOrgV1alpha2Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createNamespacedTFJobAsync(String namespace, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body, String pretty, final ApiCallback<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> callback) throws ApiException {
+    public com.squareup.okhttp.Call createNamespacedTFJobAsync(String namespace, V1alpha2TFJob body, String pretty, final ApiCallback<V1alpha2TFJob> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -196,7 +196,7 @@ public class KubeflowOrgV1alpha2Api {
         }
 
         com.squareup.okhttp.Call call = createNamespacedTFJobValidateBeforeCall(namespace, body, pretty, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1alpha2TFJob>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -776,11 +776,11 @@ public class KubeflowOrgV1alpha2Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList
+     * @return V1alpha2TFJobList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList listNamespacedTFJob(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
-        ApiResponse<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList> resp = listNamespacedTFJobWithHttpInfo(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+    public V1alpha2TFJobList listNamespacedTFJob(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+        ApiResponse<V1alpha2TFJobList> resp = listNamespacedTFJobWithHttpInfo(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
         return resp.getData();
     }
 
@@ -797,12 +797,12 @@ public class KubeflowOrgV1alpha2Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ApiResponse&lt;ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList&gt;
+     * @return ApiResponse&lt;V1alpha2TFJobList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList> listNamespacedTFJobWithHttpInfo(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+    public ApiResponse<V1alpha2TFJobList> listNamespacedTFJobWithHttpInfo(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
         com.squareup.okhttp.Call call = listNamespacedTFJobValidateBeforeCall(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1alpha2TFJobList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -823,7 +823,7 @@ public class KubeflowOrgV1alpha2Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listNamespacedTFJobAsync(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList> callback) throws ApiException {
+    public com.squareup.okhttp.Call listNamespacedTFJobAsync(String namespace, String pretty, String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<V1alpha2TFJobList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -845,7 +845,7 @@ public class KubeflowOrgV1alpha2Api {
         }
 
         com.squareup.okhttp.Call call = listNamespacedTFJobValidateBeforeCall(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1alpha2TFJobList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -949,11 +949,11 @@ public class KubeflowOrgV1alpha2Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList
+     * @return V1alpha2TFJobList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList listTFJobForAllNamespaces(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
-        ApiResponse<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList> resp = listTFJobForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
+    public V1alpha2TFJobList listTFJobForAllNamespaces(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+        ApiResponse<V1alpha2TFJobList> resp = listTFJobForAllNamespacesWithHttpInfo(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
         return resp.getData();
     }
 
@@ -969,12 +969,12 @@ public class KubeflowOrgV1alpha2Api {
      * @param resourceVersion When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it&#39;s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
      * @param timeoutSeconds Timeout for the list/watch call. (optional)
      * @param watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. (optional)
-     * @return ApiResponse&lt;ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList&gt;
+     * @return ApiResponse&lt;V1alpha2TFJobList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList> listTFJobForAllNamespacesWithHttpInfo(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
+    public ApiResponse<V1alpha2TFJobList> listTFJobForAllNamespacesWithHttpInfo(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch) throws ApiException {
         com.squareup.okhttp.Call call = listTFJobForAllNamespacesValidateBeforeCall(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1alpha2TFJobList>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -994,7 +994,7 @@ public class KubeflowOrgV1alpha2Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listTFJobForAllNamespacesAsync(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList> callback) throws ApiException {
+    public com.squareup.okhttp.Call listTFJobForAllNamespacesAsync(String _continue, String fieldSelector, Boolean includeUninitialized, String labelSelector, Integer limit, String pretty, String resourceVersion, Integer timeoutSeconds, Boolean watch, final ApiCallback<V1alpha2TFJobList> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1016,7 +1016,7 @@ public class KubeflowOrgV1alpha2Api {
         }
 
         com.squareup.okhttp.Call call = listTFJobForAllNamespacesValidateBeforeCall(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1alpha2TFJobList>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1111,11 +1111,11 @@ public class KubeflowOrgV1alpha2Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob
+     * @return V1alpha2TFJob
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob patchNamespacedTFJob(String name, String namespace, Object body, String pretty) throws ApiException {
-        ApiResponse<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> resp = patchNamespacedTFJobWithHttpInfo(name, namespace, body, pretty);
+    public V1alpha2TFJob patchNamespacedTFJob(String name, String namespace, Object body, String pretty) throws ApiException {
+        ApiResponse<V1alpha2TFJob> resp = patchNamespacedTFJobWithHttpInfo(name, namespace, body, pretty);
         return resp.getData();
     }
 
@@ -1126,12 +1126,12 @@ public class KubeflowOrgV1alpha2Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ApiResponse&lt;ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob&gt;
+     * @return ApiResponse&lt;V1alpha2TFJob&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> patchNamespacedTFJobWithHttpInfo(String name, String namespace, Object body, String pretty) throws ApiException {
+    public ApiResponse<V1alpha2TFJob> patchNamespacedTFJobWithHttpInfo(String name, String namespace, Object body, String pretty) throws ApiException {
         com.squareup.okhttp.Call call = patchNamespacedTFJobValidateBeforeCall(name, namespace, body, pretty, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1alpha2TFJob>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1146,7 +1146,7 @@ public class KubeflowOrgV1alpha2Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call patchNamespacedTFJobAsync(String name, String namespace, Object body, String pretty, final ApiCallback<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> callback) throws ApiException {
+    public com.squareup.okhttp.Call patchNamespacedTFJobAsync(String name, String namespace, Object body, String pretty, final ApiCallback<V1alpha2TFJob> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1168,7 +1168,7 @@ public class KubeflowOrgV1alpha2Api {
         }
 
         com.squareup.okhttp.Call call = patchNamespacedTFJobValidateBeforeCall(name, namespace, body, pretty, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1alpha2TFJob>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1256,11 +1256,11 @@ public class KubeflowOrgV1alpha2Api {
      * @param name name of the TFJob (required)
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob
+     * @return V1alpha2TFJob
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob readNamespacedTFJob(String name, String namespace, String pretty) throws ApiException {
-        ApiResponse<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> resp = readNamespacedTFJobWithHttpInfo(name, namespace, pretty);
+    public V1alpha2TFJob readNamespacedTFJob(String name, String namespace, String pretty) throws ApiException {
+        ApiResponse<V1alpha2TFJob> resp = readNamespacedTFJobWithHttpInfo(name, namespace, pretty);
         return resp.getData();
     }
 
@@ -1270,12 +1270,12 @@ public class KubeflowOrgV1alpha2Api {
      * @param name name of the TFJob (required)
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ApiResponse&lt;ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob&gt;
+     * @return ApiResponse&lt;V1alpha2TFJob&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> readNamespacedTFJobWithHttpInfo(String name, String namespace, String pretty) throws ApiException {
+    public ApiResponse<V1alpha2TFJob> readNamespacedTFJobWithHttpInfo(String name, String namespace, String pretty) throws ApiException {
         com.squareup.okhttp.Call call = readNamespacedTFJobValidateBeforeCall(name, namespace, pretty, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1alpha2TFJob>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1289,7 +1289,7 @@ public class KubeflowOrgV1alpha2Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call readNamespacedTFJobAsync(String name, String namespace, String pretty, final ApiCallback<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> callback) throws ApiException {
+    public com.squareup.okhttp.Call readNamespacedTFJobAsync(String name, String namespace, String pretty, final ApiCallback<V1alpha2TFJob> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1311,7 +1311,7 @@ public class KubeflowOrgV1alpha2Api {
         }
 
         com.squareup.okhttp.Call call = readNamespacedTFJobValidateBeforeCall(name, namespace, pretty, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1alpha2TFJob>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1326,7 +1326,7 @@ public class KubeflowOrgV1alpha2Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call replaceNamespacedTFJobCall(String name, String namespace, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call replaceNamespacedTFJobCall(String name, String namespace, V1alpha2TFJob body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
         
         // create path and map variables
@@ -1372,7 +1372,7 @@ public class KubeflowOrgV1alpha2Api {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call replaceNamespacedTFJobValidateBeforeCall(String name, String namespace, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call replaceNamespacedTFJobValidateBeforeCall(String name, String namespace, V1alpha2TFJob body, String pretty, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'name' is set
         if (name == null) {
@@ -1406,11 +1406,11 @@ public class KubeflowOrgV1alpha2Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob
+     * @return V1alpha2TFJob
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob replaceNamespacedTFJob(String name, String namespace, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body, String pretty) throws ApiException {
-        ApiResponse<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> resp = replaceNamespacedTFJobWithHttpInfo(name, namespace, body, pretty);
+    public V1alpha2TFJob replaceNamespacedTFJob(String name, String namespace, V1alpha2TFJob body, String pretty) throws ApiException {
+        ApiResponse<V1alpha2TFJob> resp = replaceNamespacedTFJobWithHttpInfo(name, namespace, body, pretty);
         return resp.getData();
     }
 
@@ -1421,12 +1421,12 @@ public class KubeflowOrgV1alpha2Api {
      * @param namespace object name and auth scope, such as for teams and projects (required)
      * @param body  (required)
      * @param pretty If &#39;true&#39;, then the output is pretty printed. (optional)
-     * @return ApiResponse&lt;ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob&gt;
+     * @return ApiResponse&lt;V1alpha2TFJob&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> replaceNamespacedTFJobWithHttpInfo(String name, String namespace, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body, String pretty) throws ApiException {
+    public ApiResponse<V1alpha2TFJob> replaceNamespacedTFJobWithHttpInfo(String name, String namespace, V1alpha2TFJob body, String pretty) throws ApiException {
         com.squareup.okhttp.Call call = replaceNamespacedTFJobValidateBeforeCall(name, namespace, body, pretty, null, null);
-        Type localVarReturnType = new TypeToken<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1alpha2TFJob>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1441,7 +1441,7 @@ public class KubeflowOrgV1alpha2Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call replaceNamespacedTFJobAsync(String name, String namespace, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body, String pretty, final ApiCallback<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> callback) throws ApiException {
+    public com.squareup.okhttp.Call replaceNamespacedTFJobAsync(String name, String namespace, V1alpha2TFJob body, String pretty, final ApiCallback<V1alpha2TFJob> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1463,7 +1463,7 @@ public class KubeflowOrgV1alpha2Api {
         }
 
         com.squareup.okhttp.Call call = replaceNamespacedTFJobValidateBeforeCall(name, namespace, body, pretty, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob>(){}.getType();
+        Type localVarReturnType = new TypeToken<V1alpha2TFJob>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

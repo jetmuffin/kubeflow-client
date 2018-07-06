@@ -185,7 +185,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJobList"
+              "$ref": "#/definitions/v1alpha2.TFJobList"
             }
           }
         },
@@ -219,7 +219,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJob"
+              "$ref": "#/definitions/v1alpha2.TFJob"
             }
           }
         ],
@@ -227,19 +227,19 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJob"
+              "$ref": "#/definitions/v1alpha2.TFJob"
             }
           },
           "201": {
             "description": "Created",
             "schema": {
-              "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJob"
+              "$ref": "#/definitions/v1alpha2.TFJob"
             }
           },
           "202": {
             "description": "Accepted",
             "schema": {
-              "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJob"
+              "$ref": "#/definitions/v1alpha2.TFJob"
             }
           }
         },
@@ -380,7 +380,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJob"
+              "$ref": "#/definitions/v1alpha2.TFJob"
             }
           }
         },
@@ -414,7 +414,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJob"
+              "$ref": "#/definitions/v1alpha2.TFJob"
             }
           }
         ],
@@ -422,13 +422,13 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJob"
+              "$ref": "#/definitions/v1alpha2.TFJob"
             }
           },
           "201": {
             "description": "Created",
             "schema": {
-              "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJob"
+              "$ref": "#/definitions/v1alpha2.TFJob"
             }
           }
         },
@@ -536,7 +536,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJob"
+              "$ref": "#/definitions/v1alpha2.TFJob"
             }
           }
         },
@@ -597,7 +597,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJobList"
+              "$ref": "#/definitions/v1alpha2.TFJobList"
             }
           }
         },
@@ -901,7 +901,41 @@
     }
   },
   "definitions": {
-    "com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJob": {
+    "v1alpha2.TFJobList": {
+      "description": "TFJobList is a list of TFJobs.",
+      "required": [
+        "items"
+      ],
+      "properties": {
+        "apiVersion": {
+          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources",
+          "type": "string"
+        },
+        "items": {
+          "description": "List of TFJobs.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1alpha2.TFJob"
+          }
+        },
+        "kind": {
+          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds",
+          "type": "string"
+        },
+        "metadata": {
+          "description": "Standard list metadata.",
+          "$ref": "#/definitions/v1.ListMeta"
+        }
+      },
+      "x-kubernetes-group-version-kind": [
+        {
+          "group": "kubeflow.org",
+          "version": "v1alpha2",
+          "kind": "TFJobList"
+        }
+      ]
+    },
+    "v1alpha2.TFJob": {
       "description": "TFJob represents the configuration of signal TFJob",
       "properties": {
         "apiVersion": {
@@ -918,11 +952,11 @@
         },
         "spec": {
           "description": "Specification of the desired behavior of the TFJob.",
-          "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJobSpec"
+          "$ref": "#/definitions/v1alpha2.TFJobSpec"
         },
         "status": {
           "description": "Most recently observed status of the TFJob. This data may not be up to date. Populated by the system. Read-only.",
-          "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJobStatus"
+          "$ref": "#/definitions/v1alpha2.TFJobStatus"
         }
       },
       "x-kubernetes-group-version-kind": [
@@ -933,7 +967,64 @@
         }
       ]
     },
-    "com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJobCondition": {
+    "v1alpha2.TFReplicaStatus": {
+      "description": "TFReplicaStatus represents the current observed state of the TFReplica.",
+      "properties": {
+        "active": {
+          "description": "The number of actively running pods.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "failed": {
+          "description": "The number of pods which reached phase Failed.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "succeeded": {
+          "description": "The number of pods which reached phase Succeeded.",
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1alpha2.TFReplicaSpec": {
+      "description": "TFReplicaSpec is a description of the TFReplica",
+      "properties": {
+        "replicas": {
+          "description": "Replicas is the desired number of replicas of the given template. If unspecified, defaults to 1.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "restartPolicy": {
+          "description": "Restart policy for all TFReplicas within the TFJob. One of Always, OnFailure, Never and ExitCode. Default to Never.",
+          "type": "string"
+        },
+        "template": {
+          "description": "Template is the object that describes the pod that will be created for this TFReplica. RestartPolicy in PodTemplateSpec will be overide by RestartPolicy in TFReplicaSpec",
+          "$ref": "#/definitions/v1.PodTemplateSpec"
+        }
+      }
+    },
+    "v1alpha2.TFJobSpec": {
+      "description": "TFJobSpec is a desired state description of the TFJob.",
+      "required": [
+        "tfReplicaSpecs"
+      ],
+      "properties": {
+        "cleanPodPolicy": {
+          "description": "CleanPodPolicy defines the policy to kill pods after TFJob is succeeded. Default to Running.",
+          "type": "string"
+        },
+        "tfReplicaSpecs": {
+          "description": "TFReplicaSpecs is map of TFReplicaType and TFReplicaSpec specifies the TF replicas to run. For example,\n  {\n    \"PS\": TFReplicaSpec,\n    \"Worker\": TFReplicaSpec,\n  }",
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1alpha2.TFReplicaSpec"
+          }
+        }
+      }
+    },
+    "v1alpha2.TFJobCondition": {
       "description": "TFJobCondition describes the state of the TFJob at a certain point.",
       "required": [
         "type",
@@ -968,7 +1059,7 @@
         }
       }
     },
-    "com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJobStatus": {
+    "v1alpha2.TFJobStatus": {
       "description": "TFJobStatus represents the current observed state of the TFJob.",
       "required": [
         "conditions",
@@ -984,7 +1075,7 @@
           "description": "Conditions is an array of current observed TFJob conditions.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJobCondition"
+            "$ref": "#/definitions/v1alpha2.TFJobCondition"
           }
         },
         "lastReconcileTime": {
@@ -1001,101 +1092,10 @@
           "description": "TFReplicaStatuses is map of TFReplicaType and TFReplicaStatus, specifies the status of each TFReplica.",
           "type": "object",
           "additionalProperties": {
-            "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFReplicaStatus"
+            "$ref": "#/definitions/v1alpha2.TFReplicaStatus"
           }
         }
       }
-    },
-    "com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFReplicaSpec": {
-      "description": "TFReplicaSpec is a description of the TFReplica",
-      "properties": {
-        "replicas": {
-          "description": "Replicas is the desired number of replicas of the given template. If unspecified, defaults to 1.",
-          "type": "integer",
-          "format": "int32"
-        },
-        "restartPolicy": {
-          "description": "Restart policy for all TFReplicas within the TFJob. One of Always, OnFailure, Never and ExitCode. Default to Never.",
-          "type": "string"
-        },
-        "template": {
-          "description": "Template is the object that describes the pod that will be created for this TFReplica. RestartPolicy in PodTemplateSpec will be overide by RestartPolicy in TFReplicaSpec",
-          "$ref": "#/definitions/v1.PodTemplateSpec"
-        }
-      }
-    },
-    "com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJobSpec": {
-      "description": "TFJobSpec is a desired state description of the TFJob.",
-      "required": [
-        "tfReplicaSpecs"
-      ],
-      "properties": {
-        "cleanPodPolicy": {
-          "description": "CleanPodPolicy defines the policy to kill pods after TFJob is succeeded. Default to Running.",
-          "type": "string"
-        },
-        "tfReplicaSpecs": {
-          "description": "TFReplicaSpecs is map of TFReplicaType and TFReplicaSpec specifies the TF replicas to run. For example,\n  {\n    \"PS\": TFReplicaSpec,\n    \"Worker\": TFReplicaSpec,\n  }",
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFReplicaSpec"
-          }
-        }
-      }
-    },
-    "com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFReplicaStatus": {
-      "description": "TFReplicaStatus represents the current observed state of the TFReplica.",
-      "properties": {
-        "active": {
-          "description": "The number of actively running pods.",
-          "type": "integer",
-          "format": "int32"
-        },
-        "failed": {
-          "description": "The number of pods which reached phase Failed.",
-          "type": "integer",
-          "format": "int32"
-        },
-        "succeeded": {
-          "description": "The number of pods which reached phase Succeeded.",
-          "type": "integer",
-          "format": "int32"
-        }
-      }
-    },
-    "com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJobList": {
-      "description": "TFJobList is a list of TFJobs.",
-      "required": [
-        "items"
-      ],
-      "properties": {
-        "apiVersion": {
-          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources",
-          "type": "string"
-        },
-        "items": {
-          "description": "List of TFJobs.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/com.github.kubeflow.tf-operator.pkg.apis.tensorflow.v1alpha2.TFJob"
-          }
-        },
-        "kind": {
-          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds",
-          "type": "string"
-        },
-        "metadata": {
-          "description": "Standard list metadata.",
-          "$ref": "#/definitions/v1.ListMeta"
-        }
-      },
-      "x-kubernetes-group-version-kind": [
-        {
-          "group": "kubeflow.org",
-          "version": "v1alpha2",
-          "kind": "TFJobList"
-        }
-      ]
     }
   }
 }

@@ -104,13 +104,13 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob](docs/ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob.md)
- - [ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition](docs/ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition.md)
- - [ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList](docs/ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList.md)
- - [ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec](docs/ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec.md)
- - [ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus](docs/ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus.md)
- - [ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec](docs/ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec.md)
- - [ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus](docs/ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus.md)
+ - [V1alpha2TFJob](docs/V1alpha2TFJob.md)
+ - [V1alpha2TFJobCondition](docs/V1alpha2TFJobCondition.md)
+ - [V1alpha2TFJobList](docs/V1alpha2TFJobList.md)
+ - [V1alpha2TFJobSpec](docs/V1alpha2TFJobSpec.md)
+ - [V1alpha2TFJobStatus](docs/V1alpha2TFJobStatus.md)
+ - [V1alpha2TFReplicaSpec](docs/V1alpha2TFReplicaSpec.md)
+ - [V1alpha2TFReplicaStatus](docs/V1alpha2TFReplicaStatus.md)
 
 
 ## Documentation for Authorization

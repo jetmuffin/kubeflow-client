@@ -27,20 +27,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.joda.time.DateTime;
-import org.kubeflow.client.models.ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition;
-import org.kubeflow.client.models.ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus;
+import org.kubeflow.client.models.V1alpha2TFJobCondition;
+import org.kubeflow.client.models.V1alpha2TFReplicaStatus;
 
 /**
  * TFJobStatus represents the current observed state of the TFJob.
  */
 @ApiModel(description = "TFJobStatus represents the current observed state of the TFJob.")
 
-public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus {
+public class V1alpha2TFJobStatus {
   @SerializedName("completionTime")
   private DateTime completionTime = null;
 
   @SerializedName("conditions")
-  private List<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition> conditions = new ArrayList<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition>();
+  private List<V1alpha2TFJobCondition> conditions = new ArrayList<V1alpha2TFJobCondition>();
 
   @SerializedName("lastReconcileTime")
   private DateTime lastReconcileTime = null;
@@ -49,9 +49,9 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus {
   private DateTime startTime = null;
 
   @SerializedName("tfReplicaStatuses")
-  private Map<String, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus> tfReplicaStatuses = new HashMap<String, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus>();
+  private Map<String, V1alpha2TFReplicaStatus> tfReplicaStatuses = new HashMap<String, V1alpha2TFReplicaStatus>();
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus completionTime(DateTime completionTime) {
+  public V1alpha2TFJobStatus completionTime(DateTime completionTime) {
     this.completionTime = completionTime;
     return this;
   }
@@ -69,12 +69,12 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus {
     this.completionTime = completionTime;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus conditions(List<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition> conditions) {
+  public V1alpha2TFJobStatus conditions(List<V1alpha2TFJobCondition> conditions) {
     this.conditions = conditions;
     return this;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus addConditionsItem(ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition conditionsItem) {
+  public V1alpha2TFJobStatus addConditionsItem(V1alpha2TFJobCondition conditionsItem) {
     this.conditions.add(conditionsItem);
     return this;
   }
@@ -84,15 +84,15 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus {
    * @return conditions
   **/
   @ApiModelProperty(required = true, value = "Conditions is an array of current observed TFJob conditions.")
-  public List<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition> getConditions() {
+  public List<V1alpha2TFJobCondition> getConditions() {
     return conditions;
   }
 
-  public void setConditions(List<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition> conditions) {
+  public void setConditions(List<V1alpha2TFJobCondition> conditions) {
     this.conditions = conditions;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus lastReconcileTime(DateTime lastReconcileTime) {
+  public V1alpha2TFJobStatus lastReconcileTime(DateTime lastReconcileTime) {
     this.lastReconcileTime = lastReconcileTime;
     return this;
   }
@@ -110,7 +110,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus {
     this.lastReconcileTime = lastReconcileTime;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus startTime(DateTime startTime) {
+  public V1alpha2TFJobStatus startTime(DateTime startTime) {
     this.startTime = startTime;
     return this;
   }
@@ -128,12 +128,12 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus {
     this.startTime = startTime;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus tfReplicaStatuses(Map<String, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus> tfReplicaStatuses) {
+  public V1alpha2TFJobStatus tfReplicaStatuses(Map<String, V1alpha2TFReplicaStatus> tfReplicaStatuses) {
     this.tfReplicaStatuses = tfReplicaStatuses;
     return this;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus putTfReplicaStatusesItem(String key, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus tfReplicaStatusesItem) {
+  public V1alpha2TFJobStatus putTfReplicaStatusesItem(String key, V1alpha2TFReplicaStatus tfReplicaStatusesItem) {
     this.tfReplicaStatuses.put(key, tfReplicaStatusesItem);
     return this;
   }
@@ -143,11 +143,11 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus {
    * @return tfReplicaStatuses
   **/
   @ApiModelProperty(required = true, value = "TFReplicaStatuses is map of TFReplicaType and TFReplicaStatus, specifies the status of each TFReplica.")
-  public Map<String, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus> getTfReplicaStatuses() {
+  public Map<String, V1alpha2TFReplicaStatus> getTfReplicaStatuses() {
     return tfReplicaStatuses;
   }
 
-  public void setTfReplicaStatuses(Map<String, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus> tfReplicaStatuses) {
+  public void setTfReplicaStatuses(Map<String, V1alpha2TFReplicaStatus> tfReplicaStatuses) {
     this.tfReplicaStatuses = tfReplicaStatuses;
   }
 
@@ -160,12 +160,12 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus = (ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus) o;
-    return Objects.equals(this.completionTime, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus.completionTime) &&
-        Objects.equals(this.conditions, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus.conditions) &&
-        Objects.equals(this.lastReconcileTime, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus.lastReconcileTime) &&
-        Objects.equals(this.startTime, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus.startTime) &&
-        Objects.equals(this.tfReplicaStatuses, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus.tfReplicaStatuses);
+    V1alpha2TFJobStatus v1alpha2TFJobStatus = (V1alpha2TFJobStatus) o;
+    return Objects.equals(this.completionTime, v1alpha2TFJobStatus.completionTime) &&
+        Objects.equals(this.conditions, v1alpha2TFJobStatus.conditions) &&
+        Objects.equals(this.lastReconcileTime, v1alpha2TFJobStatus.lastReconcileTime) &&
+        Objects.equals(this.startTime, v1alpha2TFJobStatus.startTime) &&
+        Objects.equals(this.tfReplicaStatuses, v1alpha2TFJobStatus.tfReplicaStatuses);
   }
 
   @Override
@@ -177,7 +177,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobStatus {\n");
+    sb.append("class V1alpha2TFJobStatus {\n");
     
     sb.append("    completionTime: ").append(toIndentedString(completionTime)).append("\n");
     sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");

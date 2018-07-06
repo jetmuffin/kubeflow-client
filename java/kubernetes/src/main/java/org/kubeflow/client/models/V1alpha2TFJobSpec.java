@@ -25,21 +25,21 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.kubeflow.client.models.ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec;
+import org.kubeflow.client.models.V1alpha2TFReplicaSpec;
 
 /**
  * TFJobSpec is a desired state description of the TFJob.
  */
 @ApiModel(description = "TFJobSpec is a desired state description of the TFJob.")
 
-public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec {
+public class V1alpha2TFJobSpec {
   @SerializedName("cleanPodPolicy")
   private String cleanPodPolicy = null;
 
   @SerializedName("tfReplicaSpecs")
-  private Map<String, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec> tfReplicaSpecs = new HashMap<String, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec>();
+  private Map<String, V1alpha2TFReplicaSpec> tfReplicaSpecs = new HashMap<String, V1alpha2TFReplicaSpec>();
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec cleanPodPolicy(String cleanPodPolicy) {
+  public V1alpha2TFJobSpec cleanPodPolicy(String cleanPodPolicy) {
     this.cleanPodPolicy = cleanPodPolicy;
     return this;
   }
@@ -57,12 +57,12 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec {
     this.cleanPodPolicy = cleanPodPolicy;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec tfReplicaSpecs(Map<String, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec> tfReplicaSpecs) {
+  public V1alpha2TFJobSpec tfReplicaSpecs(Map<String, V1alpha2TFReplicaSpec> tfReplicaSpecs) {
     this.tfReplicaSpecs = tfReplicaSpecs;
     return this;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec putTfReplicaSpecsItem(String key, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec tfReplicaSpecsItem) {
+  public V1alpha2TFJobSpec putTfReplicaSpecsItem(String key, V1alpha2TFReplicaSpec tfReplicaSpecsItem) {
     this.tfReplicaSpecs.put(key, tfReplicaSpecsItem);
     return this;
   }
@@ -72,11 +72,11 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec {
    * @return tfReplicaSpecs
   **/
   @ApiModelProperty(required = true, value = "TFReplicaSpecs is map of TFReplicaType and TFReplicaSpec specifies the TF replicas to run. For example,   {     \"PS\": TFReplicaSpec,     \"Worker\": TFReplicaSpec,   }")
-  public Map<String, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec> getTfReplicaSpecs() {
+  public Map<String, V1alpha2TFReplicaSpec> getTfReplicaSpecs() {
     return tfReplicaSpecs;
   }
 
-  public void setTfReplicaSpecs(Map<String, ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec> tfReplicaSpecs) {
+  public void setTfReplicaSpecs(Map<String, V1alpha2TFReplicaSpec> tfReplicaSpecs) {
     this.tfReplicaSpecs = tfReplicaSpecs;
   }
 
@@ -89,9 +89,9 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec = (ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec) o;
-    return Objects.equals(this.cleanPodPolicy, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec.cleanPodPolicy) &&
-        Objects.equals(this.tfReplicaSpecs, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec.tfReplicaSpecs);
+    V1alpha2TFJobSpec v1alpha2TFJobSpec = (V1alpha2TFJobSpec) o;
+    return Objects.equals(this.cleanPodPolicy, v1alpha2TFJobSpec.cleanPodPolicy) &&
+        Objects.equals(this.tfReplicaSpecs, v1alpha2TFJobSpec.tfReplicaSpecs);
   }
 
   @Override
@@ -103,7 +103,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobSpec {\n");
+    sb.append("class V1alpha2TFJobSpec {\n");
     
     sb.append("    cleanPodPolicy: ").append(toIndentedString(cleanPodPolicy)).append("\n");
     sb.append("    tfReplicaSpecs: ").append(toIndentedString(tfReplicaSpecs)).append("\n");

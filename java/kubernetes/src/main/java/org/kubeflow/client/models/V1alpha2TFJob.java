@@ -19,33 +19,35 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.kubernetes.client.models.V1ListMeta;
+import io.kubernetes.client.models.V1ObjectMeta;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import org.kubeflow.client.models.ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob;
+import org.kubeflow.client.models.V1alpha2TFJobSpec;
+import org.kubeflow.client.models.V1alpha2TFJobStatus;
 
 /**
- * TFJobList is a list of TFJobs.
+ * TFJob represents the configuration of signal TFJob
  */
-@ApiModel(description = "TFJobList is a list of TFJobs.")
+@ApiModel(description = "TFJob represents the configuration of signal TFJob")
 
-public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList {
+public class V1alpha2TFJob {
   @SerializedName("apiVersion")
   private String apiVersion = null;
-
-  @SerializedName("items")
-  private List<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> items = new ArrayList<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob>();
 
   @SerializedName("kind")
   private String kind = null;
 
   @SerializedName("metadata")
-  private V1ListMeta metadata = null;
+  private V1ObjectMeta metadata = null;
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList apiVersion(String apiVersion) {
+  @SerializedName("spec")
+  private V1alpha2TFJobSpec spec = null;
+
+  @SerializedName("status")
+  private V1alpha2TFJobStatus status = null;
+
+  public V1alpha2TFJob apiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
     return this;
   }
@@ -63,30 +65,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList {
     this.apiVersion = apiVersion;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList items(List<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> items) {
-    this.items = items;
-    return this;
-  }
-
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList addItemsItem(ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob itemsItem) {
-    this.items.add(itemsItem);
-    return this;
-  }
-
-   /**
-   * List of TFJobs.
-   * @return items
-  **/
-  @ApiModelProperty(required = true, value = "List of TFJobs.")
-  public List<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> getItems() {
-    return items;
-  }
-
-  public void setItems(List<ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob> items) {
-    this.items = items;
-  }
-
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList kind(String kind) {
+  public V1alpha2TFJob kind(String kind) {
     this.kind = kind;
     return this;
   }
@@ -104,22 +83,58 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList {
     this.kind = kind;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList metadata(V1ListMeta metadata) {
+  public V1alpha2TFJob metadata(V1ObjectMeta metadata) {
     this.metadata = metadata;
     return this;
   }
 
    /**
-   * Standard list metadata.
+   * Standard object&#39;s metadata.
    * @return metadata
   **/
-  @ApiModelProperty(value = "Standard list metadata.")
-  public V1ListMeta getMetadata() {
+  @ApiModelProperty(value = "Standard object's metadata.")
+  public V1ObjectMeta getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(V1ListMeta metadata) {
+  public void setMetadata(V1ObjectMeta metadata) {
     this.metadata = metadata;
+  }
+
+  public V1alpha2TFJob spec(V1alpha2TFJobSpec spec) {
+    this.spec = spec;
+    return this;
+  }
+
+   /**
+   * Specification of the desired behavior of the TFJob.
+   * @return spec
+  **/
+  @ApiModelProperty(value = "Specification of the desired behavior of the TFJob.")
+  public V1alpha2TFJobSpec getSpec() {
+    return spec;
+  }
+
+  public void setSpec(V1alpha2TFJobSpec spec) {
+    this.spec = spec;
+  }
+
+  public V1alpha2TFJob status(V1alpha2TFJobStatus status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Most recently observed status of the TFJob. This data may not be up to date. Populated by the system. Read-only.
+   * @return status
+  **/
+  @ApiModelProperty(value = "Most recently observed status of the TFJob. This data may not be up to date. Populated by the system. Read-only.")
+  public V1alpha2TFJobStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(V1alpha2TFJobStatus status) {
+    this.status = status;
   }
 
 
@@ -131,28 +146,30 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList = (ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList) o;
-    return Objects.equals(this.apiVersion, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList.apiVersion) &&
-        Objects.equals(this.items, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList.items) &&
-        Objects.equals(this.kind, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList.kind) &&
-        Objects.equals(this.metadata, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList.metadata);
+    V1alpha2TFJob v1alpha2TFJob = (V1alpha2TFJob) o;
+    return Objects.equals(this.apiVersion, v1alpha2TFJob.apiVersion) &&
+        Objects.equals(this.kind, v1alpha2TFJob.kind) &&
+        Objects.equals(this.metadata, v1alpha2TFJob.metadata) &&
+        Objects.equals(this.spec, v1alpha2TFJob.spec) &&
+        Objects.equals(this.status, v1alpha2TFJob.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(apiVersion, items, kind, metadata);
+    return Objects.hash(apiVersion, kind, metadata, spec, status);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList {\n");
+    sb.append("class V1alpha2TFJob {\n");
     
     sb.append("    apiVersion: ").append(toIndentedString(apiVersion)).append("\n");
-    sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    spec: ").append(toIndentedString(spec)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

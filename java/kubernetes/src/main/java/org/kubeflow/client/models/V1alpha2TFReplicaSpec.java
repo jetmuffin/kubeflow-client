@@ -29,7 +29,7 @@ import java.io.IOException;
  */
 @ApiModel(description = "TFReplicaSpec is a description of the TFReplica")
 
-public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec {
+public class V1alpha2TFReplicaSpec {
   @SerializedName("replicas")
   private Integer replicas = null;
 
@@ -39,7 +39,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec {
   @SerializedName("template")
   private V1PodTemplateSpec template = null;
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec replicas(Integer replicas) {
+  public V1alpha2TFReplicaSpec replicas(Integer replicas) {
     this.replicas = replicas;
     return this;
   }
@@ -57,7 +57,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec {
     this.replicas = replicas;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec restartPolicy(String restartPolicy) {
+  public V1alpha2TFReplicaSpec restartPolicy(String restartPolicy) {
     this.restartPolicy = restartPolicy;
     return this;
   }
@@ -75,7 +75,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec {
     this.restartPolicy = restartPolicy;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec template(V1PodTemplateSpec template) {
+  public V1alpha2TFReplicaSpec template(V1PodTemplateSpec template) {
     this.template = template;
     return this;
   }
@@ -102,10 +102,10 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec = (ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec) o;
-    return Objects.equals(this.replicas, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec.replicas) &&
-        Objects.equals(this.restartPolicy, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec.restartPolicy) &&
-        Objects.equals(this.template, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec.template);
+    V1alpha2TFReplicaSpec v1alpha2TFReplicaSpec = (V1alpha2TFReplicaSpec) o;
+    return Objects.equals(this.replicas, v1alpha2TFReplicaSpec.replicas) &&
+        Objects.equals(this.restartPolicy, v1alpha2TFReplicaSpec.restartPolicy) &&
+        Objects.equals(this.template, v1alpha2TFReplicaSpec.template);
   }
 
   @Override
@@ -117,7 +117,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaSpec {\n");
+    sb.append("class V1alpha2TFReplicaSpec {\n");
     
     sb.append("    replicas: ").append(toIndentedString(replicas)).append("\n");
     sb.append("    restartPolicy: ").append(toIndentedString(restartPolicy)).append("\n");

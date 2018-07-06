@@ -28,7 +28,7 @@ import java.io.IOException;
  */
 @ApiModel(description = "TFReplicaStatus represents the current observed state of the TFReplica.")
 
-public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus {
+public class V1alpha2TFReplicaStatus {
   @SerializedName("active")
   private Integer active = null;
 
@@ -38,7 +38,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus
   @SerializedName("succeeded")
   private Integer succeeded = null;
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus active(Integer active) {
+  public V1alpha2TFReplicaStatus active(Integer active) {
     this.active = active;
     return this;
   }
@@ -56,7 +56,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus
     this.active = active;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus failed(Integer failed) {
+  public V1alpha2TFReplicaStatus failed(Integer failed) {
     this.failed = failed;
     return this;
   }
@@ -74,7 +74,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus
     this.failed = failed;
   }
 
-  public ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus succeeded(Integer succeeded) {
+  public V1alpha2TFReplicaStatus succeeded(Integer succeeded) {
     this.succeeded = succeeded;
     return this;
   }
@@ -101,10 +101,10 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus = (ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus) o;
-    return Objects.equals(this.active, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus.active) &&
-        Objects.equals(this.failed, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus.failed) &&
-        Objects.equals(this.succeeded, comGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus.succeeded);
+    V1alpha2TFReplicaStatus v1alpha2TFReplicaStatus = (V1alpha2TFReplicaStatus) o;
+    return Objects.equals(this.active, v1alpha2TFReplicaStatus.active) &&
+        Objects.equals(this.failed, v1alpha2TFReplicaStatus.failed) &&
+        Objects.equals(this.succeeded, v1alpha2TFReplicaStatus.succeeded);
   }
 
   @Override
@@ -116,7 +116,7 @@ public class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus {\n");
+    sb.append("class V1alpha2TFReplicaStatus {\n");
     
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    failed: ").append(toIndentedString(failed)).append("\n");

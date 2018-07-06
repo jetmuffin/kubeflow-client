@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="createNamespacedTFJob"></a>
 # **createNamespacedTFJob**
-> ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob createNamespacedTFJob(namespace, body, pretty)
+> V1alpha2TFJob createNamespacedTFJob(namespace, body, pretty)
 
 
 
@@ -32,10 +32,10 @@ create a TFJob
 
 KubeflowOrgV1alpha2Api apiInstance = new KubeflowOrgV1alpha2Api();
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body = new ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob(); // ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob | 
+V1alpha2TFJob body = new V1alpha2TFJob(); // V1alpha2TFJob | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
-    ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob result = apiInstance.createNamespacedTFJob(namespace, body, pretty);
+    V1alpha2TFJob result = apiInstance.createNamespacedTFJob(namespace, body, pretty);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KubeflowOrgV1alpha2Api#createNamespacedTFJob");
@@ -48,12 +48,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | [**ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob**](ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob.md)|  |
+ **body** | [**V1alpha2TFJob**](V1alpha2TFJob.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
 
 ### Return type
 
-[**ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob**](ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob.md)
+[**V1alpha2TFJob**](V1alpha2TFJob.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ No authorization required
 
 <a name="listNamespacedTFJob"></a>
 # **listNamespacedTFJob**
-> ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList listNamespacedTFJob(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
+> V1alpha2TFJobList listNamespacedTFJob(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch)
 
 
 
@@ -252,7 +252,7 @@ String resourceVersion = "resourceVersion_example"; // String | When specified w
 Integer timeoutSeconds = 56; // Integer | Timeout for the list/watch call.
 Boolean watch = true; // Boolean | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 try {
-    ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList result = apiInstance.listNamespacedTFJob(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
+    V1alpha2TFJobList result = apiInstance.listNamespacedTFJob(namespace, pretty, _continue, fieldSelector, includeUninitialized, labelSelector, limit, resourceVersion, timeoutSeconds, watch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KubeflowOrgV1alpha2Api#listNamespacedTFJob");
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList**](ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList.md)
+[**V1alpha2TFJobList**](V1alpha2TFJobList.md)
 
 ### Authorization
 
@@ -290,7 +290,7 @@ No authorization required
 
 <a name="listTFJobForAllNamespaces"></a>
 # **listTFJobForAllNamespaces**
-> ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList listTFJobForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch)
+> V1alpha2TFJobList listTFJobForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch)
 
 
 
@@ -314,7 +314,7 @@ String resourceVersion = "resourceVersion_example"; // String | When specified w
 Integer timeoutSeconds = 56; // Integer | Timeout for the list/watch call.
 Boolean watch = true; // Boolean | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
 try {
-    ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList result = apiInstance.listTFJobForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
+    V1alpha2TFJobList result = apiInstance.listTFJobForAllNamespaces(_continue, fieldSelector, includeUninitialized, labelSelector, limit, pretty, resourceVersion, timeoutSeconds, watch);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KubeflowOrgV1alpha2Api#listTFJobForAllNamespaces");
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList**](ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobList.md)
+[**V1alpha2TFJobList**](V1alpha2TFJobList.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ No authorization required
 
 <a name="patchNamespacedTFJob"></a>
 # **patchNamespacedTFJob**
-> ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob patchNamespacedTFJob(name, namespace, body, pretty)
+> V1alpha2TFJob patchNamespacedTFJob(name, namespace, body, pretty)
 
 
 
@@ -370,7 +370,7 @@ String namespace = "namespace_example"; // String | object name and auth scope, 
 Object body = null; // Object | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
-    ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob result = apiInstance.patchNamespacedTFJob(name, namespace, body, pretty);
+    V1alpha2TFJob result = apiInstance.patchNamespacedTFJob(name, namespace, body, pretty);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KubeflowOrgV1alpha2Api#patchNamespacedTFJob");
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob**](ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob.md)
+[**V1alpha2TFJob**](V1alpha2TFJob.md)
 
 ### Authorization
 
@@ -402,7 +402,7 @@ No authorization required
 
 <a name="readNamespacedTFJob"></a>
 # **readNamespacedTFJob**
-> ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob readNamespacedTFJob(name, namespace, pretty)
+> V1alpha2TFJob readNamespacedTFJob(name, namespace, pretty)
 
 
 
@@ -420,7 +420,7 @@ String name = "name_example"; // String | name of the TFJob
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
-    ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob result = apiInstance.readNamespacedTFJob(name, namespace, pretty);
+    V1alpha2TFJob result = apiInstance.readNamespacedTFJob(name, namespace, pretty);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KubeflowOrgV1alpha2Api#readNamespacedTFJob");
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob**](ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob.md)
+[**V1alpha2TFJob**](V1alpha2TFJob.md)
 
 ### Authorization
 
@@ -451,7 +451,7 @@ No authorization required
 
 <a name="replaceNamespacedTFJob"></a>
 # **replaceNamespacedTFJob**
-> ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob replaceNamespacedTFJob(name, namespace, body, pretty)
+> V1alpha2TFJob replaceNamespacedTFJob(name, namespace, body, pretty)
 
 
 
@@ -467,10 +467,10 @@ replace the specified TFJob
 KubeflowOrgV1alpha2Api apiInstance = new KubeflowOrgV1alpha2Api();
 String name = "name_example"; // String | name of the TFJob
 String namespace = "namespace_example"; // String | object name and auth scope, such as for teams and projects
-ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob body = new ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob(); // ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob | 
+V1alpha2TFJob body = new V1alpha2TFJob(); // V1alpha2TFJob | 
 String pretty = "pretty_example"; // String | If 'true', then the output is pretty printed.
 try {
-    ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob result = apiInstance.replaceNamespacedTFJob(name, namespace, body, pretty);
+    V1alpha2TFJob result = apiInstance.replaceNamespacedTFJob(name, namespace, body, pretty);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KubeflowOrgV1alpha2Api#replaceNamespacedTFJob");
@@ -484,12 +484,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| name of the TFJob |
  **namespace** | **String**| object name and auth scope, such as for teams and projects |
- **body** | [**ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob**](ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob.md)|  |
+ **body** | [**V1alpha2TFJob**](V1alpha2TFJob.md)|  |
  **pretty** | **String**| If &#39;true&#39;, then the output is pretty printed. | [optional]
 
 ### Return type
 
-[**ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob**](ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJob.md)
+[**V1alpha2TFJob**](V1alpha2TFJob.md)
 
 ### Authorization
 

@@ -1,5 +1,5 @@
 
-# ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFReplicaStatus
+# V1alpha2TFReplicaStatus
 
 ## Properties
 Name | Type | Description | Notes

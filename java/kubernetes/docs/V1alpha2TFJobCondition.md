@@ -1,5 +1,5 @@
 
-# ComGithubKubeflowTfOperatorPkgApisTensorflowV1alpha2TFJobCondition
+# V1alpha2TFJobCondition
 
 ## Properties
 Name | Type | Description | Notes
