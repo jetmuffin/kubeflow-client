@@ -1,0 +1,7 @@
+/Users/jeff/workspace/kubernetes/java/util/src/test/java/org/kubeflow/client/util/ConfigTest.java
+/Users/jeff/workspace/kubernetes/java/util/src/test/java/org/kubeflow/client/util/credentials/AccessTokenAuthenticationTest.java
+/Users/jeff/workspace/kubernetes/java/util/src/test/java/org/kubeflow/client/util/credentials/UsernamePasswordAuthenticationTest.java
+/Users/jeff/workspace/kubernetes/java/util/src/test/java/org/kubeflow/client/util/ClientBuilderTest.java
+/Users/jeff/workspace/kubernetes/java/util/src/test/java/org/kubeflow/client/util/TestUtils.java
+/Users/jeff/workspace/kubernetes/java/util/src/test/java/org/kubeflow/client/util/credentials/ClientCertificateAuthenticationTest.java
+/Users/jeff/workspace/kubernetes/java/util/src/test/java/org/kubeflow/client/util/KubeConfigTest.java
