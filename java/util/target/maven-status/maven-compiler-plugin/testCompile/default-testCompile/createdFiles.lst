@@ -1,7 +1,0 @@
-org/kubeflow/client/util/credentials/AccessTokenAuthenticationTest.class
-org/kubeflow/client/util/ClientBuilderTest.class
-org/kubeflow/client/util/KubeConfigTest.class
-org/kubeflow/client/util/ConfigTest.class
-org/kubeflow/client/util/credentials/ClientCertificateAuthenticationTest.class
-org/kubeflow/client/util/TestUtils.class
-org/kubeflow/client/util/credentials/UsernamePasswordAuthenticationTest.class
